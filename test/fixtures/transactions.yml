@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyString
+  credit_account_id: 1
+  debit_account_id: 1
+  amount: 9.99
+  commercial_document_id: 1
+  commercial_document_type: MyString
+
+two:
+  description: MyString
+  credit_account_id: 1
+  debit_account_id: 1
+  amount: 9.99
+  commercial_document_id: 1
+  commercial_document_type: MyString

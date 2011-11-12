@@ -1,0 +1,44 @@
+<%= form_for(@transaction) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_account_id %><br />
+    <%#= f.text_field :credit_account_id %>
+    <%= f.select(:credit_account_id, Account.find(:all).collect {|c| [ c.name, c.id ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :debit_account_id %><br />
+    <%#= f.text_field :debit_account_id %>
+     <%= f.select(:debit_account_id, Account.find(:all).collect {|c| [ c.name, c.id ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :commercial_document_id %><br />
+    <%= f.text_field :commercial_document_id %>
+  </div>
+  <div class="field">
+    <%= f.label :commercial_document_type %><br />
+    <%= f.text_field :commercial_document_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
