@@ -1,5 +1,5 @@
 class Transaction < ActiveRecord::Base
-  belongs_to :commercial_document, :polymorphic => true
+  #belongs_to :commercial_document, :polymorphic => true
   belongs_to :credit_account, :class_name => "Account"
   belongs_to :debit_account, :class_name => "Account"
 

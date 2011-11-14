@@ -1,6 +1,7 @@
-<h1>Listing Accounts</h1>
+<div align="center"><h1>Wel Come To Simple Accounting Web Application</h1></div>
+<h1 align="center">Indexing Accounts</h1>
 
-<table>
+<table style="width:95%;border:1px solid;margin-left:30px;background:lightgrey">
   <tr>
     <th class="nobg">ID</th>
     <th>Name</th>
@@ -8,11 +9,12 @@
     <th>Credit Balance</th>
     <th>Debit Balance</th>
     <th>Balance</td>
+    <th>Trial Balance</td>
   </tr>
 
 <% @accounts.each do |account| %>
   <tr class="<%= cycle("even", "odd") -%>">
-    <td><%=h account.id %></td>
+    <td>0000<%=h account.id %></td>
     <td><%=h account.name %></td>
     <td><%=h account.type %></td>
     <td><%=h account.credits_balance %></td>
@@ -25,6 +27,9 @@
 </table>
 
 <br />
-<%= link_to 'New Account', new_account_path %>
-<h3>Go to <%= link_to 'Transactions', transactions_path %></h3>
+<div style="margin-left:30px;font-size:18px"><%= link_to 'Create New Account', new_account_path %>
+<h3>Need to see or  <%= link_to 'Want to go Transactions', transactions_path %></h3></div>
 
+Some useful links<br> 
+<a href="http://www.accountingcoach.com/online-accounting-course/60Xpg01.html">http://www.accountingcoach.com/online-accounting-course/60Xpg01.html</a><br>
+<a href="http://en.wikipedia.org/wiki/Double-entry_bookkeeping_system">http://en.wikipedia.org/wiki/Double-entry_bookkeeping_system</a>

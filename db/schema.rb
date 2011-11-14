@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(:version => 20111112031751) do
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.string   "type"
-    t.boolean  "contra"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,14 +25,11 @@ ActiveRecord::Schema.define(:version => 20111112031751) do
     t.string   "description"
     t.integer  "credit_account_id"
     t.integer  "debit_account_id"
-    t.decimal  "amount",                   :precision => 10, :scale => 0
-    t.integer  "commercial_document_id"
-    t.string   "commercial_document_type"
+    t.decimal  "amount",            :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "transactions", ["commercial_document_id", "commercial_document_type"], :name => "index_transactions_on_commercial_doc"
   add_index "transactions", ["credit_account_id"], :name => "index_transactions_on_credit_account_id"
   add_index "transactions", ["debit_account_id"], :name => "index_transactions_on_debit_account_id"
 

@@ -1,11 +1,13 @@
-<h1>Listing Transactions</h1>
+<h1 align="center">Listing All Transactions</h1>
 
-<table>
+<table style="width:95%;border:1px solid;margin-left:30px;background:lightgrey">
   <tr>
     <th class="nobg">ID</th>
     <th>Description</th>
-    <th>Credit Account</th>
-    <th>Debit Account</th>
+    <th class="nobg">Credit Account ID</th>
+    <th>Credit Account Name </th>
+    <th class="nobg">Debit Account ID </th>
+    <th>Debit Account Name</th>
     <th>Amount</th>
     <th>Date</th>
   </tr>
@@ -14,18 +16,17 @@
   <tr class="<%= cycle("even", "odd") -%>">
     <td><%=h transaction.id %></td>
     <td><%=h transaction.description %></td>
+    <td>0000<%=transaction.credit_account_id %></td>
     <td><%=link_to(h(transaction.credit_account.name), account_path(transaction.credit_account)) %></td>
+    <td>0000<%=transaction.debit_account_id%></td>
     <td><%=link_to(h(transaction.debit_account.name), account_path(transaction.debit_account)) %></td>
     <td><%=h transaction.amount %></td>
     <td><%=h transaction.created_at %></td>
-    <td><%= link_to 'Show', transaction %></td>
-    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<h3>Go to <%= link_to 'Accounts', accounts_path %></h3>
+<div style="margin-left:30px;font-size:18px"><%= link_to 'Make  New Transaction', new_transaction_path %>
+<h3>See  <%= link_to 'Accounts', accounts_path %></h3></div>
 

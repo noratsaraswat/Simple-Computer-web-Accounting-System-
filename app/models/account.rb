@@ -4,7 +4,7 @@ class Account < ActiveRecord::Base
 
   has_many :credit_transactions,  :class_name => "Transaction", :foreign_key => "credit_account_id"
   has_many :debit_transactions,  :class_name => "Transaction", :foreign_key => "debit_account_id"
-
+#make trail Balanace 
   def self.trial_balance
     unless self.new.class == Account
       raise(NoMethodError, "undefined method 'trial_balance'")
